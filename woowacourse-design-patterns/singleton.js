@@ -2,8 +2,8 @@
 class Singleton {
 	// 생성자 함수
 	constructor() {
-		console.log(Singleton.instance);
 		if (Singleton.instance) {
+			console.log("처음");
 			return Singleton.instance;
 		}
 

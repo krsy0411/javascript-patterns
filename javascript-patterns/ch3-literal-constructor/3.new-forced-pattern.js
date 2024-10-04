@@ -38,6 +38,7 @@ console.log(good_morning2_1.tastes); // yummy
 Example2.prototype.tastes2 = "yummy2";
 // 프로토타입을 통해 상속된 프로퍼티는 뒤늦게 추가되어도 인스턴스에서 사용 가능함
 console.log(good_morning2.tastes2); // undefined -> 다음처럼 프로토타입 체이닝이 끊어짐
+
 // 3. 스스로를 호출하는 생성자
 // 이제, 명명규칙을 지키면서 항상 생성자로서 동작하도록 강제하면서도, 인스턴스 객체에서 프로토타입의 프로퍼티들을 사용가능하도록 해보자
 function WaffleUpgrade() {

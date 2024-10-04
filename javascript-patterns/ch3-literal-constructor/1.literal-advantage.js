@@ -11,12 +11,12 @@ dog.getName = function () {
 
 // 윗 예제처럼, 백지 상태의 빈 객체에서 프로퍼티와 메서드들을 추가 가능
 // 또한, 아래와 같이 프로그램의 생명주기 중 어느때라도 객체를 수정 가능
-console.log(dog);
+// console.log(dog);
 dog.getName = function () {
 	return "Lee";
 };
 delete dog.getName;
-console.log(dog);
+// console.log(dog);
 dog.say = function () {
 	return "Woof!";
 };
@@ -28,4 +28,4 @@ dog.fleas = true;
 let cat = {};
 console.log(cat);
 // 이렇게 자신만의 프로퍼티가 없음을 확인 가능
-console.log(cat.hasOwnProperty("something")); // false
+console.log(cat.hasOwnProperty("meow")); // false
