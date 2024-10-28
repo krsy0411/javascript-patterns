@@ -7,6 +7,7 @@
 // JSON.parse() : JSON 문자열을 객체로 변환 (ES5+부터 언어에 포함되며, 최신 브라우저의 JS엔진에 내장된 메서드)
 let jstr = '{"mykey": "my value"}';
 let data = JSON.parse(jstr);
+console.log(data); // { mykey: 'my value' }
 console.log(data.mykey); // "my value"
 
 // JSON.stringify() : 객체를 JSON 문자열로 변환

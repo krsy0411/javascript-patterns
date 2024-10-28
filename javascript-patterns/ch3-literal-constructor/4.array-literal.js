@@ -4,6 +4,8 @@ const a = new Array("item1", "item2", "item3");
 // 2. 배열 리터럴
 const a_literal = ["item1", "item2", "item3"];
 
+console.log(a.constructor);
+
 console.log("<Array 생성자 함수>");
 console.log("type :", typeof a, "\nconstructor :", a.constructor === Array);
 console.log("<배열 리터럴>");
@@ -23,7 +25,7 @@ console.log(
 // JS에서 배열은, 객체이므로 typeof 연산자를 써도 "object"가 반환됨
 // 배열의 실제값이 배열인지 확인하는 가장 좋은 방법은, Array.isArray() 메서드 : "다만, ES5부터 지원"
 console.log(Array.isArray([])); // true
-// 배열과 비슷한 객체로 속여보기
+// 배열과 비슷한 객체로 속여보기 : 보통 배열의 대표메서드 중 하나인 length, slice를 통해서 배열인지 확인하는데, 객체가 두 메서드를 안 갖는다고 보장하지 않으므로 테스트해보자
 console.log(
 	Array.isArray({
 		length: 3,
