@@ -37,4 +37,29 @@ for (let i in man) {
 	// 함수 본문...
 }
 
+// --------------------------------------------------------------------------------------------
+
 // 참고 : 오버라이딩에 대한 방어도 된다는 건 무슨 소리일까?
+// 2025.02.03 : 내 의문점에 대한 설명 추가
+
+// 자바스크립트의 객체들은 자신만의 고유한 프로퍼티와 메서드를 가질 수 있으며, 또한 프로토타입 체인을 통해 상속된 프로퍼티와 메서드도 가질 수 있음
+// 내장 객체들 또한 프로토타입 체인을 통해 상속받은 메서드들을 가지고 있음
+// 내가 만든 객체에도 해당 메서드들이 상속되는데, 만약 내가 만든 객체에 같은 이름의 메서드를 추가한다면, 해당 객체의 메서드가 호출됨(오버라이딩)
+
+const man2 = {
+	name: "John",
+	age: 30,
+	hasOwnProperty: function () {},
+};
+
+// for-in 루프에서 사용
+for (let key in man2) {
+	// 오버라이딩된 hasOwnProperty 메서드 사용
+	if (man2.hasOwnProperty(key)) {
+		console.log(key); // 아무것도 출력되지 않음(hasOwnProperty 메서드가 오버라이딩되었기 때문)
+	}
+	// Object.prototype.hasOwnProperty.call() 사용
+	if (Object.prototype.hasOwnProperty.call(man2, key)) {
+		console.log(key); // name, age, hasOwnProperty 출력
+	}
+}
