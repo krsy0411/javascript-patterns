@@ -40,3 +40,8 @@ myFuncAdvanced.cache = {};
 // 주의사항 : 직렬화시, 객체를 식별할 수 X
 // 이게 뭔 말이지? : 객체의 키가 동일한 경우 -> 직렬화되었을때 키 문자열이 동일해지므로, 동일 항목을 공유하게 됨
 // 해결책 : 각 객체에 고유 id값을 부여해서 사용
+
+// 2025.02.09 업데이트 : 의문점에 대한 예시
+const result1 = myFuncAdvanced({ name: "John", age: 30 });
+const result2 = myFuncAdvanced({ name: "John", age: 30 });
+console.log(result1 === result2); // true (캐시된 결과를 재사용)
